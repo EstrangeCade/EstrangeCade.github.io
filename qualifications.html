@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Qualifications Page</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="description" content="This page is a displays a table with my qualifications">
+    <meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="theme-color" content="#5996ff">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <a href="index.html"><img id="logo" src="images/android-chrome-192x192.png" alt="Logo of security badge"></a>
+            <h1 id="titleText">Qualifications Page</h1>
+        </header>
+        <nav class="mainNav">
+            <ul>
+                <li><a href="index.html"><span class="navText">Home</span></a></li>
+                <li><a href="skills.html"><span class="navText">Skills</span></a></li>
+                <li><a href="#" class="active"><span class="navText">Qualifications</span></a></li>
+            </ul>
+        </nav>
+        <picture>
+            <!-- Image Source "https://www.senetas.com/wp-content/uploads/The-importance-of-cybersecurity-in-high-tech-industries-homepage-banner.jpg" -->
+            <source srcset="images/banner.webp" type="image/webp">
+            <source srcset="images/banner.png" type="image/png">
+            <img id="mainImg" src="images/banner.png" alt="Blue banner of binary numbers">
+        </picture>
+        <main>
+            <section>
+                <h2>My Journey</h2>
+                <p>As you can see from the table below, most of my educational life has revolved around computers. This shows that I have had a long history when it comes to computing and that I have achieved all goals set out before me.</p>
+                <p>To find out more information about my qualifications, please scroll down to the bottom of the page and use the email address to get in contact with me.</p>
+            </section>
+            <section id="table">
+                <h2>My Qualifications</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Qualification</th>
+                            <th>Year of Attainment</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GCSE - Maths</td>
+                            <td>2015</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>GCSE - English</td>
+                            <td>2015</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>GCSE - Computing</td>
+                            <td>2015</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>Level 2 Computer Games and Website Design</td>
+                            <td>2016</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>Cisco IT Essentials Certificate</td>
+                            <td>2017</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>Level 3 Computer Games and Website Design</td>
+                            <td>2018</td>
+                            <td>Merit-Pass</td>
+                        </tr>
+                        <tr>
+                            <td>Cyber Security (Foundation Year)</td>
+                            <td>2019</td>
+                            <td>First</td>
+                        </tr>
+                        <tr>
+                            <td>Cyber Security (Year 1)</td>
+                            <td>2020</td>
+                            <td>First</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Qualification</th>
+                            <th>Year of Attainment</th>
+                            <th>Grade</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li>&copy;Cade Brodie</li>
+                    <li>Email: <a href="mailto:b014788i@student.staffs.ac.uk">b014788i@student.staffs.ac.uk</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+    <script>
+    //check whether browser support service workers
+    if ('serviceWorker' in navigator) {
+        //wait until page loaded to avoid delaying rendering
+        window.addEventListener('load', function() {
+            //register service worker
+            navigator.serviceWorker.register('serviceworker.js').then(
+                function(registration) {
+                    console.log('Service worker registration successful',
+                        registration);
+                },
+                function(err) {
+                    console.log('Service worker registration failed', err);
+                });
+        });
+    }
+    </script>
+</body>
+
+</html>

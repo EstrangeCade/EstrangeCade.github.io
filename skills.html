@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Skills Page</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="description" content="This page is a description about CSS and ECMAScript with links to my examples">
+    <meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="theme-color" content="#5996ff">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <a href="index.html"><img id="logo" src="images/android-chrome-192x192.png" alt="Logo of security badge"></a>
+            <h1 id="titleText">Skills Page</h1>
+        </header>
+        <nav class="mainNav">
+            <ul>
+                <li><a href="index.html"><span class="navText">Home</span></a></li>
+                <li><a href="#" class="active"><span class="navText">Skills</span></a></li>
+                <li><a href="qualifications.html"><span class="navText">Qualifications</span></a></li>
+            </ul>
+        </nav>
+        <picture>
+            <!-- Image Source "https://www.senetas.com/wp-content/uploads/The-importance-of-cybersecurity-in-high-tech-industries-homepage-banner.jpg" -->
+            <source srcset="images/banner.webp" type="image/webp">
+            <source srcset="images/banner.png" type="image/png">
+            <img id="mainImg" src="images/banner.png" alt="Blue banner of binary numbers">
+        </picture>
+        <main class="wrapper">
+            <section id="skillsAbout">
+                <h2>CSS and ECMAScript</h2>
+                <p>CSS stands for Cascading Style Sheets, it is used to store HTML styles in an external file, this helps to reduce the amount of code on the HTML page as there will be no need to use inline styling. My CSS examples demonstrate how CSS can be used to style use different styles for the same HTML page, they demonstrate my knowledge of CSS, check them out below!</p>
+                <p>ECMAScript is a standard script language. (Did you know that ECMA means European Computer Manufacturer’s Association?) Website developers can implement ECMAScript onto their website to change the way that a web page looks/behaves for a user. My ECMAScript example is a coffee ordering form, It demonstrates know knowledge of ECMAScript, check it out below!</p>
+            </section>
+            <section id="cssD1">
+                <h2>CSS Design 1</h2>
+                <p>This is the first example of my CSS design pages, for this example I added an animation to the sections which makes them spin around once and then stop, I also changed the positioning on these sections by using a grid layout.</p>
+                <p>There are many more styling changes on the page such as a different background colour, how the navigation bar operates, etc..</p>
+                <p>Hover on the image below to zoom in</p>
+                <picture>
+                    <source srcset="images/design1.webp" type="image/webp">
+                    <source srcset="images/design1.png" type="image/png">
+                    <img src="images/design1.png" alt="Photo of first CSS design page" class="hover">
+                </picture>
+                <button onclick="location.href='css1.html'">CSS Design 1</button>
+            </section>
+            <section id="cssD2">
+                <h2>CSS Design 2</h2>
+                <p>This is the second example of my CSS design pages, for this example, I added an animation for the sections that makes them scale in when the page first loads, I also made the navigation bar stick to the right-hand side of the page.</p>
+                <p>I also added additional styling to things like the section border by making it dashed, you can see as well that the font has changed into a different font famliy.</p>
+                <p>Hover on the image below to zoom in</p>
+                <picture>
+                    <source srcset="images/design2.webp" type="image/webp">
+                    <source srcset="images/design2.png" type="image/png">
+                    <img src="images/design2.png" alt="Photo of second CSS design page" class="hover">
+                </picture>
+                <button onclick="location.href='css2.html'">CSS Design 2</button>
+            </section>
+            <section id="js">
+                <h2>ECMAScript Application</h2>
+                <p>This is the example for my ECMAScript, this example lets the user (you) order cup(s) of coffee with different milk types, a free 11th drink, showing/hiding HTML elements when a specific option is entered, etc..</p>
+                <p>You can leave the application at any time by pressing the 'Go Back' button at the top of the page.</p>
+                <picture>
+                    <!-- Image Source: https://www.pinclipart.com/picdir/big/139-1390089_tea-cup-transparent-background-coffee-transparent-background-transparent.png -->
+                    <source srcset="images/coffee.webp" type="image/webp">
+                    <source srcset="images/coffee.png" type="image/png">
+                    <img src="images/coffee.png" alt="Photo of a coffee cup" class="center">
+                </picture>
+                <button onclick="location.href='coffee.html'">ECMAScript Application</button>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li>&copy;Cade Brodie</li>
+                    <li>Email: <a href="mailto:b014788i@student.staffs.ac.uk">b014788i@student.staffs.ac.uk</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+    <!-- Service Worker Script -->
+    <script>
+    //check whether browser support service workers
+    if ('serviceWorker' in navigator) {
+        //wait until page loaded to avoid delaying rendering
+        window.addEventListener('load', function() {
+            //register service worker
+            navigator.serviceWorker.register('serviceworker.js').then(
+                function(registration) {
+                    console.log('Service worker registration successful',
+                        registration);
+                },
+                function(err) {
+                    console.log('Service worker registration failed', err);
+                });
+        });
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cyber Security</title>
+    <link rel="stylesheet" href="styles/design2.css">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="description" content="This page an example of my CSS skills">
+    <meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="theme-color" content="#5996ff">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <!-- Body Containter -->
+    <div id="container">
+        <!-- Header Containing Logo And Title Text -->
+        <header>
+            <div class="headerLogo"><a href="index.html"><img src="images/android-chrome-192x192.png" alt="Logo of security badge"></a></div>
+            <h1 id="titleText">Cyber Security</h1>
+        </header>
+        <!-- Navigation Menu -->
+        <nav class="mainNav">
+            <ul>
+                <li><a href="index.html"><span class="navText">Home</span></a></li>
+                <li><a href="skills.html" class="active"><span class="navText">Skills</span></a></li>
+                <li><a href="qualifications.html"><span class="navText">Qualifications</span></a></li>
+            </ul>
+        </nav>
+        <picture>
+            <!-- Image Source "https://www.senetas.com/wp-content/uploads/The-importance-of-cybersecurity-in-high-tech-industries-homepage-banner.jpg" -->
+            <source srcset="images/banner.webp" type="image/webp">
+            <source srcset="images/banner.png" type="image/png">
+            <img id="mainImg" src="images/banner.png" alt="Blue banner of binary numbers">
+        </picture>
+        <!-- Main Content Container -->
+        <main class="wrapper">
+            <!-- First Section -->
+            <section id="sec1">
+                <h2>Definition of Cyber Security</h2>
+                <p>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These cyberattacks are usually aimed at accessing, changing, or destroying sensitive information; extorting money from users; or interrupting normal business processes.</p>
+                <p>Implementing effective cybersecurity measures is particularly challenging today because there are more devices than people, and attackers are becoming more innovative.</p>
+            </section>
+            <!-- Second Section -->
+            <section id="sec2">
+                <h2>Risks of Having Poor Cyber Security</h2>
+                <p>There are many risks, some more serious than others. Among these dangers are malware erasing your entire system, an attacker breaking into your system and altering files, an attacker using your computer to attack others, or an attacker stealing your credit card information and making unauthorized purchases. There is no guarantee that even with the best precautions some of these things won't happen to you.</p>
+            </section>
+            <!-- Third Section -->
+            <section id="sec3">
+                <h2>Common Threat Types</h2>
+                <picture>
+                    <!-- Image Source https://www.pngkey.com/png/full/246-2464763_cybersecurity-cybersecurity-transparent.png -->
+                    <source srcset="images/lock.webp" type="image/webp">
+                    <source srcset="images/lock.png" type="image/png">
+                    <img src="images/lock.png" alt="Photo of a lock" class="center">
+                </picture>
+                <p>Cyber security teams need to deal with a wide range of risks and threats. Here are some of the most common cyber threat types.</p>
+                <ul id="cyberList">
+                    <li>Malware</li>
+                    <li>Ransomware</li>
+                    <li>Social Engineering</li>
+                    <li>Phishing</li>
+                    <li>Sabotage</li>
+                    <li>Vulnerability Attacks</li>
+                </ul>
+                <p>Malware - Viruses, worms, and trojans that find their way into IT systems and replicate across the networks. These may often be combined with keyloggers, or other malicious software to steal access details and other data.</p>
+                <p>Ransomware - A special type of encrypted attack malware that locks up and encrypts files, demanding a ransom (often in Bitcoin) in exchange for removing the encryption and restoring access for the system owner.</p>
+                <p>Social Engineering - Criminals use confidence tricks and other techniques to get employees to let their guard down and share sensitive information, such as logins and passwords.</p>
+                <p>Phishing - Use of fraudulent emails and other messages to convince people to install malware or otherwise reveal sensitive information about business systems.</p>
+                <p>Sabotage - Denial of service (DoS) and other attacks designed to take down business assets like websites or publicly available applications and services.</p>
+                <p>Vulnerability Attacks - Unpatched software and systems create vulnerabilities that criminals exploit through targeted attacks.</p>
+            </section>
+        </main>
+        <!-- Footer With Contact Information -->
+        <footer>
+            <nav>
+                <ul>
+                    <li>&copy;Cade Brodie</li>
+                    <li>Email: <a href="mailto:b014788i@student.staffs.ac.uk">b014788i@student.staffs.ac.uk</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+    <!-- Service Worker -->
+    <script>
+    //check whether browser support service workers
+    if ('serviceWorker' in navigator) {
+        //wait until page loaded to avoid delaying rendering
+        window.addEventListener('load', function() {
+            //register service worker
+            navigator.serviceWorker.register('serviceworker.js').then(
+                function(registration) {
+                    console.log('Service worker registration successful',
+                        registration);
+                },
+                function(err) {
+                    console.log('Service worker registration failed', err);
+                });
+        });
+    }
+    </script>
+</body>
+
+</html>

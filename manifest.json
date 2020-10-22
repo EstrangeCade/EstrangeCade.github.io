@@ -1,0 +1,22 @@
+{
+    "name": "Cade Brodie - Web Assignment Website",
+    "short_name": "Cades Website",
+    "start_url": "index.html",
+    "description": "Cade Brodies website for employers",
+    "lang": "en",
+    "orientation": "portrait-primary",
+    "icons": [
+    {
+        "src": "images/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    },
+    {
+        "src": "images/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }],
+    "theme_color": "#cff0f5",
+    "background_color": "#002627",
+    "display": "standalone"
+}

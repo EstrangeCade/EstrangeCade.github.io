@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Coffee Application</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="description" content="This page is an application for ordering coffee">
+    <meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="theme-color" content="#5996ff">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <a href="index.html"><img id="logo" src="images/android-chrome-192x192.png" alt="Logo of security badge"></a>
+            <h1 id="titleText">Coffee Application</h1>
+        </header>
+        <nav class="mainNav">
+            <ul>
+                <li><a href="index.html"><span class="navText">Home</span></a></li>
+                <li><a href="skills.html" class="active"><span class="navText">Skills</span></a></li>
+                <li><a href="qualifications.html"><span class="navText">Qualifications</span></a></li>
+            </ul>
+        </nav>
+        <picture>
+            <!-- Image Source "https://www.senetas.com/wp-content/uploads/The-importance-of-cybersecurity-in-high-tech-industries-homepage-banner.jpg" -->
+            <source srcset="images/banner.webp" type="image/webp">
+            <source srcset="images/banner.png" type="image/png">
+            <img id="mainImg" src="images/banner.png" alt="Blue banner of binary numbers">
+        </picture>
+        <main>
+            <button onclick="location.href='skills.html'">Go Back</button>
+            <section>
+                <h2>Coffee Order Form</h2>
+                <form id="coffeeForm" method="POST" action="scripts/coffee.js">
+                    <fieldset onclick="outputSelection()">
+                        <legend>Coffee Type</legend>
+                        <p>
+                            <input type="radio" id="latte" name="coffee" value="Latte" checked>
+                            <label for="latte">Latte</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="flatWhite" name="coffee" value="Flat White">
+                            <label for="flatWhite">Flat White</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="espresso" name="coffee" value="Espresso">
+                            <label for="espresso">Espresso</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="cappuccino" name="coffee" value="Cappuccino">
+                            <label for="cappuccino">Cappuccino</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="americano" name="coffee" value="Americano">
+                            <label for="americano">Americano</label>
+                        </p>
+                    </fieldset>
+                    <fieldset id="sizeSection" onclick="outputSelection()">
+                        <legend>Drink Size</legend>
+                        <p>
+                            <input type="radio" id="Small" name="size" value="2.45" checked>
+                            <label for="Small">Small (£2.45)</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="Medium" name="size" value="2.65">
+                            <label for="Medium">Medium (£2.65)</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="Large" name="size" value="2.85">
+                            <label for="Large">Large (£2.85)</label>
+                        </p>
+                    </fieldset>
+                    <fieldset id="milkSection" onclick="outputSelection()">
+                        <legend>Milk</legend>
+                        <p>
+                            <input type="radio" id="whole" name="milk" value="Whole">
+                            <label for="whole">Whole</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="skimmed" name="milk" value="Skimmed">
+                            <label for="skimmed">Skimmed</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="semi-skimmed" name="milk" value="Semi-skimmed" checked>
+                            <label for="semi-skimmed">Semi-Skimmed</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="coconut" name="milk" value="Coconut">
+                            <label for="coconut">Coconut </label>
+                        </p>
+                        <p>
+                            <input type="radio" id="soya" name="milk" value="Soya">
+                            <label for="soya">Soya</label>
+                        </p>
+                    </fieldset>
+                    <fieldset onclick="outputSelection()">
+                        <legend>Extras</legend>
+                        <p>
+                            <input type="checkbox" id="Sugar" name="extras" value="0">
+                            <label for="Sugar">Sugar</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="Cream" name="extras" value="0.50">
+                            <label for="Cream">Cream (£0.50)</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="Syrup" name="extras" value="0.25" onclick="outputSelection()">
+                            <label for="Syrup">Syrup (£0.25 Per Shot)</label>
+                        </p>
+                        <p id="syrupShots">
+                            <input id="shot" name="shot" type="number" min="1" max="5" placeholder="Syrup Shots" value="1">
+                            <label for="shot">Number of shots of syrup (Maximum = 5)</label>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Confirmation</legend>
+                        <p>
+                            <button type="button" id="addOrder" class="formBtn">Add to Order</button>
+                            <button type="button" id="placeOrder" class="formBtn">Place Order</button>
+                            <button type="button" id="addFav" class="advancedBtn">Add to favourites</button>
+                            <button type="button" id="orderFav" class="advancedBtn">Order Favourite</button>
+                        </p>
+                    </fieldset>
+                </form>
+                <form id="details">
+                    <fieldset id="output">
+                        <legend>Current Order</legend>
+                        <p id="outCoffee"> </p>
+                        <p id="outSize"> </p>
+                        <p id="outMilk"> </p>
+                        <p id="displayExtras"> </p>
+                        <p id="outShots"> </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Current Order Total</legend>
+                        <p id="totalOrder"> </p>
+                    </fieldset>
+                </form>
+                <form id="outcomeTotal">
+                    <fieldset>
+                        <legend>Total Order</legend>
+                        <p id="outTotalCoffee"> </p>
+                        <p id="grandTotal"> </p>
+                    </fieldset>
+                    <fieldset id="outputTotal">
+                        <legend>Your Orders</legend>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li>&copy;Cade Brodie</li>
+                    <li>Email: <a href="mailto:b014788i@student.staffs.ac.uk">b014788i@student.staffs.ac.uk</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+    <script>
+    //check whether browser support service workers
+    if ('serviceWorker' in navigator) {
+        //wait until page loaded to avoid delaying rendering
+        window.addEventListener('load', function() {
+            //register service worker
+            navigator.serviceWorker.register('serviceworker.js').then(
+                function(registration) {
+                    console.log('Service worker registration successful',
+                        registration);
+                },
+                function(err) {
+                    console.log('Service worker registration failed', err);
+                });
+        });
+    }
+    </script>
+    <script src="scripts/coffee.js"></script>
+</body>
+
+</html>
